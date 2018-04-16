@@ -1,0 +1,45 @@
+////////////////////
+// VARIABLES
+////////////////////
+$backcolor: black;
+$color1: #777;
+$color2: #bbb;
+$color3: white;
+
+////////////////////
+// CUSTOM SETTINGS
+////////////////////
+
+//section bottom margin gap
+$section-bottom-margin: 4px;
+
+// set to make divs visible during contruction
+$div-min-height: 50px;
+
+
+body {
+  background-color: $backcolor;
+}
+
+.section {
+	background-color: $color1;
+	width: 100%;
+	min-height: $div-min-height;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 4px;
+}
+
+.sub-section {
+	background-color: $color2;
+	min-height: $div-min-height;
+	flex-grow: 1;
+	margin: 0px 2px 0px 2px;
+	// width: calc(25% - 2px);
+}
+
+@media (max-width: 900px) { 
+	.sub-section {
+		width: 100%;
+	}
+}

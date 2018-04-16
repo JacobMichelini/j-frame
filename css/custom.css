@@ -1,0 +1,22 @@
+body {
+  background-color: black; }
+
+.section {
+  background-color: #777;
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 4px; }
+
+.sub-section {
+  background-color: #bbb;
+  min-height: 50px;
+  flex-grow: 1;
+  margin: 0px 2px 0px 2px; }
+
+@media (max-width: 900px) {
+  .sub-section {
+    width: 100%; } }
+
+/*# sourceMappingURL=custom.css.map */
