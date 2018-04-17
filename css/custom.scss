@@ -17,7 +17,7 @@ $body-font: 'Questrial', sans-serif;
 $heading-font: 'Merriweather', serif;
 
 //sets all margins around sections and sub-sections
-$margins: 1px;
+$margins: 4px;
 //section bottom margin gap
 $section-bottom-margin: $margins;
 
@@ -33,12 +33,12 @@ $div-min-height: 10px;
 	background-color: red !important;
 }
 
-////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 // LAYOUT + TEXT CSS
-////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 
 body {
-  background-color: $backcolor;
+	background-color: $backcolor;
 }
 
 .section {
@@ -57,7 +57,6 @@ body {
 	flex-grow: 1;
 	margin-right: $margins / 2;
 	margin-left: $margins / 2;
-	// width: calc(25% - 2px);
 }
 
 .sub-section {
@@ -78,6 +77,26 @@ body {
 	h2 {
 		font-size: 1.3em;
 		color: $sub-heading;
+	}
+
+	.section {
+		// makes sub-sections inside sub-sections fill 100% of available height (incompatible with multiple nested stacked sections)
+		// min-height: 100%;
+		border-top: $margins solid $color1;
+		margin-bottom: 0px;
+	}
+
+	.section:first-of-type {
+		border-top: 0px;
+	}
+
+	.sub-section {
+		margin: 0px;
+		margin-left: $margins;
+	}
+
+	.sub-section:first-of-type {
+		margin-left: 0px;
 	}
 
 
@@ -137,21 +156,21 @@ body {
 	display: block;
 }
 
-//interior image
+//interior image with html
 .interior-image {
 	max-width: 100%;
 	display: block;
 }
 
+// removes margins for images inside paragraphs
 p {
+	
 	.interior-image {
 		margin: 3vw -3vw 3vw -3vw;
 		max-width: calc(100% + 6vw)
 	}
 
 }
-
-
 
 ////////////////////
 // BREAKPOINTS FOR MOBILE
@@ -164,8 +183,14 @@ p {
 		width: 100%;
 		// margin-bottom: $margins;
 	}
+
 	// gives a vertical margin between subsections a margin on mobile
 	.sub-section + .sub-section {
 		margin-top: $margins;
 	}
+
+	.sub-section .sub-section {
+		margin-left: 0px;
+	}
+	
 }
