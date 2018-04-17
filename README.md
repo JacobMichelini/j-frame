@@ -37,3 +37,5 @@ A light and flexible custom site framework built using flexbox/scss variables to
 ```
 
 - All layout moves to single column at a customizable breakpoint
+
+- Color and Section/Sub-Section margins are editable in a single location via SCSS variable
