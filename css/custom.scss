@@ -1,9 +1,14 @@
+//-------------------------------------------
+// J-FRAME
+// Jacob Michelini 2018
+//-------------------------------------------
+
 ////////////////////
 // VARIABLES
 ////////////////////
 $backcolor: black;
 $color1: black;
-$color2: #bbb;
+$color2: #eee;
 $color3: white;
 
 $sub-heading: #666;
@@ -11,15 +16,17 @@ $sub-heading: #666;
 $body-font: 'Questrial', sans-serif;
 $heading-font: 'Merriweather', serif;
 
-////////////////////
-// CUSTOM SETTINGS
-////////////////////
-
+//sets all margins around sections and sub-sections
+$margins: 1px;
 //section bottom margin gap
-$section-bottom-margin: 4px;
+$section-bottom-margin: $margins;
+
+////////////////////
+// UTILITY SETTINGS
+////////////////////
 
 // set to make divs visible during contruction
-$div-min-height: 30px;
+$div-min-height: 10px;
 
 //makes things red for debugging
 .red {
@@ -27,7 +34,7 @@ $div-min-height: 30px;
 }
 
 ////////////////////
-// LAYOUT CSS
+// LAYOUT + TEXT CSS
 ////////////////////
 
 body {
@@ -40,7 +47,7 @@ body {
 	min-height: $div-min-height;
 	display: flex;
 	flex-wrap: wrap;
-	margin-bottom: 4px;
+	margin-bottom: $margins;
 }
 
 .sub-section {
@@ -48,7 +55,8 @@ body {
 	min-height: $div-min-height;
 	flex-basis: 0;
 	flex-grow: 1;
-	margin: 0px 2px 0px 2px;
+	margin-right: $margins / 2;
+	margin-left: $margins / 2;
 	// width: calc(25% - 2px);
 }
 
@@ -88,25 +96,7 @@ body {
 		margin-top: -2.5vw;
 	}
 
-
 }
-
-
-//image method with css
-.full-image {
-	background-image: url(../images/mt.jpg);
-	background-size: cover;
-	min-height: 400px;
-}
-
-//image method with html
-.image {
-	object-fit: cover;
-	max-width: 100%;
-	display: block;
-}
-
-
 
 .x2-width {
 	flex-grow: 2;
@@ -128,15 +118,54 @@ body {
 	flex-grow: 6;
 }
 
+////////////////////
+// IMAGES
+////////////////////
+
+//covering image method with css
+.back-image {
+	background-image: url(../images/mt.jpg);
+	background-size: cover;
+	background-position: center;
+	min-height: 500px;
+}
+
+//covering image method with html
+.image {
+	object-fit: cover;
+	max-width: 100%;
+	display: block;
+}
+
+//interior image
+.interior-image {
+	max-width: 100%;
+	display: block;
+}
+
+p {
+	.interior-image {
+		margin: 3vw -3vw 3vw -3vw;
+		max-width: calc(100% + 6vw)
+	}
+
+}
+
+
+
+////////////////////
+// BREAKPOINTS FOR MOBILE
+////////////////////
+
 @media (max-width: 768px) { 
 
 	.sub-section {
 		flex-basis: auto;
 		width: 100%;
-		// margin-bottom: 4px;
+		// margin-bottom: $margins;
 	}
 	// gives a vertical margin between subsections a margin on mobile
 	.sub-section + .sub-section {
-		margin-top: 4px;
+		margin-top: $margins;
 	}
 }
