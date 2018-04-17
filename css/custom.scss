@@ -20,6 +20,8 @@ $heading-font: 'Merriweather', serif;
 $margins: 4px;
 //section bottom margin gap
 $section-bottom-margin: $margins;
+//Sets the screen size that layout switches to single column for mobile
+$single-column-breakpoint: 768px;
 
 ////////////////////
 // UTILITY SETTINGS
@@ -176,7 +178,7 @@ p {
 // BREAKPOINTS FOR MOBILE
 ////////////////////
 
-@media (max-width: 768px) { 
+@media (max-width: $single-column-breakpoint) { 
 
 	.sub-section {
 		flex-basis: auto;
@@ -192,5 +194,5 @@ p {
 	.sub-section .sub-section {
 		margin-left: 0px;
 	}
-	
+
 }
