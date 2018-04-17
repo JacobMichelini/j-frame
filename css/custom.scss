@@ -6,6 +6,8 @@ $color1: black;
 $color2: #bbb;
 $color3: white;
 
+$sub-heading: #666;
+
 $body-font: 'Questrial', sans-serif;
 $heading-font: 'Merriweather', serif;
 
@@ -50,8 +52,6 @@ body {
 	// width: calc(25% - 2px);
 }
 
-
-
 .sub-section {
 
 	p {
@@ -67,10 +67,43 @@ body {
 		font-size: 2em;
 	}
 
-	// reduce margin between heading and paragraph (-10% is none)
-	h1 + p {
-	margin-top: -2.5vw;
+	h2 {
+		font-size: 1.3em;
+		color: $sub-heading;
 	}
+
+
+	//reduce margin between h1 and h2 (-3vw is none)
+	h1 + h2 {
+		margin-top: -2.8vw;
+	}
+
+	// reduce margin between h1 and paragraph (-3vw is none)
+	h1 + p {
+		margin-top: -2.5vw;
+	}
+
+		// reduce margin between h2 and paragraph (-3vw is none)
+	h2 + p {
+		margin-top: -2.5vw;
+	}
+
+
+}
+
+
+//image method with css
+.full-image {
+	background-image: url(../images/mt.jpg);
+	background-size: cover;
+	min-height: 400px;
+}
+
+//image method with html
+.image {
+	object-fit: cover;
+	max-width: 100%;
+	display: block;
 }
 
 

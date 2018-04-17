@@ -28,8 +28,25 @@ body {
   margin: 3vw;
   font-family: "Merriweather", serif;
   font-size: 2em; }
+.sub-section h2 {
+  font-size: 1.3em;
+  color: #666; }
+.sub-section h1 + h2 {
+  margin-top: -2.8vw; }
 .sub-section h1 + p {
   margin-top: -2.5vw; }
+.sub-section h2 + p {
+  margin-top: -2.5vw; }
+
+.full-image {
+  background-image: url(../images/mt.jpg);
+  background-size: cover;
+  min-height: 400px; }
+
+.image {
+  object-fit: cover;
+  max-width: 100%;
+  display: block; }
 
 .x2-width {
   flex-grow: 2; }
