@@ -64,6 +64,9 @@ body {
 .x6-width {
   flex-grow: 6; }
 
+.set-width {
+  flex-basis: auto; }
+
 .back-image {
   background-image: url(../images/mt.jpg);
   background-size: cover;
